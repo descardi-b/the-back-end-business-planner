@@ -9,7 +9,7 @@ VALUES
 
 INSERT INTO role (title, salary, department_id)
 VALUES
-('Senior Account ant', 80000, 1),
+('Senior Accountant', 80000, 1),
 ('Content Strategist', 50000, 2),
 ('Investment Manager', 130000, 3),
 ('Paralegal', 45000, 4),

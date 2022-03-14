@@ -9,18 +9,18 @@ class DB {
     // CRUD stuffs 
     
     // create functions
-    createEmp(employee){
+    createEmp(emp){
         return this.connection
         .promise()
         .query(
-            "INSERT INTO employee SET ?;", employee
+            `INSERT INTO employee(first_name, last_name, role_id, manager_id) VALUE ('${emp.first_name}', '${emp.last_name}', ${emp.role_id}, ${emp.manager_id});`,
         );
     }
-    createRole(role){
+    createRole(roleName, roleSalary, roleDept){
         return this.connection
         .promise()
         .query(
-            "INSERT INTO role SET ?;", role
+            `INSERT INTO role(title, salary, department_id) VALUE ('${roleName}', ${roleSalary}, ${roleDept});`,
         );
     }
     createDept(department){

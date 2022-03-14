@@ -14,7 +14,6 @@ startPrompt = function () {
             }
         ])
         .then((answer) => {
-            console.log(answer);
             const userAction = answer.action;
 
             switch (userAction) {
@@ -50,10 +49,8 @@ startPrompt = function () {
 
 function viewDepartments() {
     // calling findAllDept from db constructor
-    console.log('Hello!');
     db.findAllDept()
         .then(([rows]) => {
-            console.log('Hey again!');
             let dept = rows;
             console.log("\n");
             console.table(dept);
@@ -136,7 +133,6 @@ function addRole() {
                     }
                 ])
                 .then((answers) => {
-                    console.log(answers);
 
                     let roleName = answers.roleName;
                     let roleSalary = answers.roleSalary;
@@ -169,7 +165,6 @@ function addEmployee() { // adds employee
             console.log(answers)
             let firstName = answers.first_name; // assign values for first name
             let lastName = answers.last_name; // and last name
-            console.log(firstName, lastName);
 
             // call findAllRoles method so we can map out all current roles
             db.findAllRoles()
@@ -218,7 +213,6 @@ function addEmployee() { // adds employee
                                                 first_name: firstName, // assign firstName where firstname is used
                                                 last_name: lastName // assign last name where last name is used
                                             }
-                                            console.log(emp);
 
                                             // use the createEmp method to make a new employee
                                             db.createEmp(emp)

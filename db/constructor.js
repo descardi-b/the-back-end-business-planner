@@ -36,7 +36,7 @@ class DB {
         return this.connection
         .promise()
         .query(
-            "SELECT * FROM employee;"
+            "SELECT employee.id, employee.first_name, employee.last_name, employee.role_id, employee.manager_id, role.id, role.title, role.salary, role.department_id, department.id, department.name FROM employee, role, department WHERE role.department_id = department.id AND employee.role_id = role.id;"
         );
     }
     
@@ -44,7 +44,7 @@ class DB {
         return this.connection
         .promise()
         .query(
-            "SELECT * FROM role;"
+            "SELECT role.id, role.title, role.salary, role.department_id, department.id, department.name FROM role, department WHERE role.department_id = department.id;"
         );
     }
     findAllDept(){
